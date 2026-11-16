@@ -9,7 +9,7 @@ class Calculator:
         self.__op1 = op1
         self.__op2 = op2
 
-    def add(self):
+    def sum(self):
         return self.__op1 + self.__op2
 
     def subtract(self):
@@ -26,7 +26,7 @@ class Calculator:
 
 if __name__ == "__main__":
     calc = Calculator(10, 2)
-    print(f"10 + 2 = {calc.add()}")
+    print(f"10 + 2 = {calc.sum()}")
     print(f"10 - 2 = {calc.subtract()}")
     print(f"10 * 2 = {calc.multiply()}")
     print(f"10 / 2 = {calc.divide()}")

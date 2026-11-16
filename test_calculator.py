@@ -2,9 +2,9 @@ import pytest
 from calculator import Calculator
 
 
-def test_add():
+def test_sum():
     calc = Calculator(5, 3)
-    assert calc.add() == 8
+    assert calc.sum() == 8
 
 
 def test_subtract():
