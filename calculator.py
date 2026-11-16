@@ -22,3 +22,20 @@ class Calculator:
         if self.__op2 == 0:
             raise ZeroDivisionError("Cannot divide by zero")
         return self.__op1 / self.__op2
+
+
+if __name__ == "__main__":
+    calc = Calculator(10, 2)
+    print(f"10 + 2 = {calc.add()}")
+    print(f"10 - 2 = {calc.subtract()}")
+    print(f"10 * 2 = {calc.multiply()}")
+    print(f"10 / 2 = {calc.divide()}")
+    try:
+        calc_zero = Calculator(10, 0)
+        print(f"10 / 0 = {calc_zero.divide()}")
+    except ZeroDivisionError as e:
+        print(f"10 / 0 --> error: {e}")
+    try:
+        calc_input = Calculator("abc", 2)
+    except TypeError as e:
+        print(f"Calculator('abc', 2) --> error: {e}")
