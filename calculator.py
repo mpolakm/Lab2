@@ -23,6 +23,11 @@ class Calculator:
             raise ZeroDivisionError("Cannot divide by zero")
         return self.__op1 / self.__op2
 
+    def power(self):
+        if self.__op1 == 0 and self.__op2 < 0:
+            raise ZeroDivisionError("Cannot raise zero to a negative power")
+        return self.__op1 ** self.__op2
+
 
 if __name__ == "__main__":
     calc = Calculator(10, 2)
@@ -30,6 +35,7 @@ if __name__ == "__main__":
     print(f"10 - 2 = {calc.subtract()}")
     print(f"10 * 2 = {calc.multiply()}")
     print(f"10 / 2 = {calc.divide()}")
+    print(f"10 ** 2 = {calc.power()}")
     try:
         calc_zero = Calculator(10, 0)
         print(f"10 / 0 = {calc_zero.divide()}")
@@ -39,3 +45,8 @@ if __name__ == "__main__":
         calc_input = Calculator("abc", 2)
     except TypeError as e:
         print(f"Calculator('abc', 2) --> error: {e}")
+    try:
+        calc_zero_power = Calculator(0, -1)
+        print(f"0 ** -1 = {calc_zero_power.power()}")
+    except ZeroDivisionError as e:
+        print(f"0 ** -1 --> error: {e}")
