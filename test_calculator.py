@@ -35,3 +35,13 @@ def test_invalid_first_operand():
 def test_invalid_second_operand():
     with pytest.raises(TypeError):
         Calculator(5, "abc")
+
+def test_power():
+    calc = Calculator(2, 3)
+    assert calc.power() == 8
+
+
+def test_power_zero_negative_exponent():
+    calc = Calculator(0, -1)
+    with pytest.raises(ZeroDivisionError): 
+        calc.power()
